@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "therubyracer", ">= 0.11.0", :group => :assets, :platform => :ruby, :require => "v8"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
