@@ -6,6 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Club.create(name: 'First club', contact_officer:'A Person',date_created:'2012-01-01')
-Club.create(name: 'Second club', contact_officer:'J Jones',date_created:'2012-01-01')
+Club.create(name: 'Demon\'s club', contact_officer:'Baal',date_created:'2006-06-06')
+Club.create(name: 'Doom club', contact_officer:'Satan',date_created:'2006-06-06')
 

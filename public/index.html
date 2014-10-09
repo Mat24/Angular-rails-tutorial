@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="agenda" >
+<head>
+    <meta charset="utf-8">
+    <title> Filtrado de Datos </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js" > </script>
+    <script src="js/angular-resource.js"></script>
+</head>
+<body>
+<div ng-controller="HttpController" >
+    <table class="table" border="1">
+        <tr>
+            <th>Id
+            </th>
+            <th>Name
+            </th>
+            <th>Contact_officer
+            </th>
+            <th>Date of created
+            </th>
+
+        </tr>
+        <tr ng-repeat="profile in profiles">
+            <td>{{profile.id}}
+            </td>
+            <td>{{profile.name}}
+            </td>
+            <td>{{profile.contact_officer}}
+            </td>
+            <td>{{profile.date_created}}
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    var helloApp = angular.module("agenda", [ 'ngResource' ]);
+    helloApp.controller("HttpController", [ '$scope', '$resource',
+        function($scope, $resource) {
+            //
+            // Query Action Method
+            //
+            var UserProfiles = $resource('../clubs.json');
+            UserProfiles.query(function(profiles){
+                $scope.profiles = profiles;
+            });
+        } ]);
+</script>
+</body>
+</html>

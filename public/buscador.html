@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="agenda" >
+  <head>
+	<meta charset="utf-8">
+	<title> Filtrado de Datos </title>
+    
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js" > </script>
+  </head>
+  <body>
+      <div ng-controller="controlador1" >  
+          <h2>Contactos</h2>
+          <label> buscar </label>
+          <input type="search" ng-model="busqueda" >
+         <hr> 
+         <table>
+              <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellidos</th>
+                  <th scope="col">Interes</th>
+                  <th scope="col">Origen</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Empresa</th>
+                  <th scope="col">producto</th>
+                  <th scope="col">Twitter</th>
+             </tr>
+         </table>
+          <p ng-repeat = " entrada in agenda | filter: busqueda  ">
+              {{ entrada.nombre }}{{ entrada.apellido }} {{ entrada.interes }} {{ entrada.origen }} {{ entrada.email }} {{ entrada.empresa }} {{ entrada.producto }} {{ entrada.twitter }}
+          </p>
+          <hr>
+        
+      </div>
+      
+      <!-- Base de Prueba -->
+
+      <script>
+          var miAplicacion = angular.module( 'agenda' , [] )
+          miAplicacion.controller ( 'controlador1' , [ '$scope' , function($scope){
+              $scope.agenda = [
+                    {nombre:'Mateo', apellido:'Aya', interes:'Software', origen:'Origen 2', email:'produccion10@softpymes.com.co', empresa:'Ayacomputer', producto: 'sCRM', twitter: 'Bitmat24'},                             
+                    {nombre: 'David', apellido:'Trochez', interes:'Implementacion', origen:'Origen 1', email:'david@gmail.com', empresa: 'La colina', producto: 'CRM', twitter: 'david525'},       
+                    {nombre: 'Camilo', apellido:'Contreras', interes:'TI software', origen:'Origen 2', email:'camilo.contreras@expert.co', empresa:'xpert', producto: 'sCRM', twitter:'camilo.contreras.00'},      
+                    {nombre: 'Andrea Alejandra', apellido:'Martinez',  interes:'Capacitacion', origen:'Origen 2', email:'andreina@laluisa.com', empresa: 'Altos de la Luisa', producto: 'CRM', twitter:'andreina.sal'},  
+                    {nombre: 'Maria', apellido: 'Perez', interes: 'Desarrollo', origen:'Origen 2', email:'sanper@hotmail.com', empresa:'Portal del Sol', producto:'Desarrollo', twitter:'maria.san'},
+                    {nombre:'Mateo David', apellido:'Aya', interes:'Software', origen:'Origen 2', email:'produccion10@softpymes.com.co', empresa:'Ayacomputer', producto: 'sCRM', twitter: 'Bitmat24'},                             
+                    {nombre: 'David', apellido:'Trochez', interes:'Implementacion', origen:'Origen 1', email:'david@gmail.com', empresa: 'La colina', producto: 'CRM', twitter: 'david525'},       
+                    {nombre: 'Camilo', apellido:'Contreras', interes:'TI software', origen:'Origen 2', email:'camilo.contreras@expert.co', empresa:'xpert', producto: 'sCRM', twitter:'camilo.contreras.00'},      
+                    {nombre: 'Alejandra', apellido:'Martinez',  interes:'Capacitacion', origen:'Origen 2', email:'andreina@laluisa.com', empresa: 'Altos de la Luisa', producto: 'CRM', twitter:'andreina.sal'},  
+                    {nombre: 'Maria', apellido: 'Perez', interes: 'Desarrollo', origen:'Origen 2', email:'sanper@hotmail.com', empresa:'Portal del Sol', producto:'Desarrollo', twitter:'maria.san'},
+                    {nombre:'Mateo', apellido:'Aya', interes:'Software', origen:'Origen 2', email:'produccion10@softpymes.com.co', empresa:'Ayacomputer', producto: 'sCRM', twitter: 'Bitmat24'},                             
+                    {nombre: 'David Gabriel', apellido:'Trochez', interes:'Implementacion', origen:'Origen 1', email:'david@gmail.com', empresa: 'La colina', producto: 'CRM', twitter: 'david525'},       
+                    {nombre: 'Camilo', apellido:'Contreras', interes:'TI software', origen:'Origen 2', email:'camilo.contreras@expert.co', empresa:'xpert', producto: 'sCRM', twitter:'camilo.contreras.00'},      
+                    {nombre: 'Andrea', apellido:'Martinez',  interes:'Capacitacion', origen:'Origen 2', email:'andreina@laluisa.com', empresa: 'Altos de la Luisa', producto: 'CRM', twitter:'andreina.sal'},  
+                    {nombre: 'Sandra', apellido: 'Perez', interes: 'Desarrollo', origen:'Origen 2', email:'sanper@hotmail.com', empresa:'Portal del Sol', producto:'Desarrollo', twitter:'maria.san'},
+                    {nombre:'Mateo', apellido:'Aya', interes:'Software', origen:'Origen 2', email:'produccion10@softpymes.com.co', empresa:'Ayacomputer', producto: 'sCRM', twitter: 'Bitmat24'},                             
+                    {nombre: 'David Pedro', apellido:'Trochez', interes:'Implementacion', origen:'Origen 1', email:'david@gmail.com', empresa: 'La colina', producto: 'CRM', twitter: 'david525'},       
+                    {nombre: 'Camilo Andres', apellido:'Contreras', interes:'TI software', origen:'Origen 2', email:'camilo.contreras@expert.co', empresa:'xpert', producto: 'sCRM', twitter:'camilo.contreras.00'},      
+                    {nombre: 'Andrea Alejandra', apellido:'Martinez',  interes:'Capacitacion', origen:'Origen 2', email:'andreina@laluisa.com', empresa: 'Altos de la Luisa', producto: 'CRM', twitter:'andreina.sal'},  
+                    {nombre: 'Sandra Maria', apellido: 'Perez', interes: 'Desarrollo', origen:'Origen 2', email:'sanper@hotmail.com', empresa:'Portal del Sol', producto:'Desarrollo', twitter:'maria.san'}  
+              ]          
+          }])
+      </script>
+  </body>
+</html>
